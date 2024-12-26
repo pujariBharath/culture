@@ -1,4 +1,6 @@
 import './globals.css'
+import '../globals.css'; // Example if file is one level up
+
 
 import { Inter } from 'next/font/google'
 
