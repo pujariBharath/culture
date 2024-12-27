@@ -1,7 +1,6 @@
-import React from "react";
+import QuestionPage from '../../components/QuestionPage'
 
-const Page = () => {
-  return <div>This is the question 2 page.</div>;
-};
+export default function Question2() {
+  return <QuestionPage word="Coordinate" nextPage="/question/3" prevPage="/question/1" />
+}
 
-export default Page;
