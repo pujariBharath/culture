@@ -16,7 +16,7 @@ export default function Home() {
     if (emailPattern.test(email)) {
       router.push('/question/1')
     } else {
-      alert("Please enter a valid email address.")
+      alert("Please enter a valid email address.") //This line was already correct. No change needed.
     }
   }
 
@@ -24,13 +24,16 @@ export default function Home() {
 
   return (
     <main className={`${styles.main} ${darkMode ? styles.darkMode : ''}`}>
+      <button className={styles.toggleButton} onClick={handleToggleDarkMode}>
+        <span className={styles.toggleIcon}>{darkMode ? '🌙' : '☀️'}</span>
+      </button>
       <h1 className={styles.title}>CULTURE PRO</h1>
       <hr />
       <div className={styles.container}>
         <div className={styles.instructionsBox}>
           <p><strong>Instructions:</strong></p>
           <p>Answer each question honestly and to the best of your ability.</p>
-          <p>Choose only one answer for each question by marking either 'Yes' or 'No'.</p>
+          <p>Choose only one answer for each question by marking either &apos;Yes&apos; or &apos;No&apos;.</p>
           <p>If you feel neither answer accurately reflects your response, please select the option that most closely aligns with your perspective.</p>
         </div>
 
@@ -50,9 +53,6 @@ export default function Home() {
           <button type="submit" className={styles.submitButton}>Submit</button>
         </form>
 
-        <button className={styles.toggleButton} onClick={handleToggleDarkMode}>
-          <span className={styles.toggleIcon}>{darkMode ? '🌙' : '☀️'}</span>
-        </button>
       </div>
     </main>
   )
