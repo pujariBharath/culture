@@ -1,101 +1,106 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f9f9f9;
-    font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: rgb(var(--background-start-rgb));
+  color: rgb(var(--foreground-rgb));
+  font-family: Arial, sans-serif;
+}
+
+.checkmarkCircle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #28d68c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: popIn 0.5s ease;
+}
+
+.checkmark {
+  position: relative;
+  width: 25px;
+  height: 50px;
+  border-right: 4px solid white;
+  border-bottom: 4px solid white;
+  transform: rotate(45deg);
+  animation: drawCheck 0.4s 0.5s ease forwards;
+  opacity: 0;
+}
+
+.container h1 {
+  margin-top: 20px;
+  font-size: 2rem;
+}
+
+.container p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+.container button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  background-color: #28d68c;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.container button:hover {
+  background-color: #22b678;
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0);
   }
-  
-  .checkmarkCircle {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background: #28d68c;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: popIn 0.5s ease;
+  100% {
+    transform: scale(1);
   }
-  
-  .checkmark {
-    position: relative;
-    width: 25px;
+}
+
+@keyframes drawCheck {
+  0% {
+    height: 0;
+    opacity: 1;
+  }
+  50% {
+    height: 25px;
+    opacity: 1;
+  }
+  100% {
     height: 50px;
-    border-right: 4px solid white;
-    border-bottom: 4px solid white;
-    transform: rotate(45deg);
-    animation: drawCheck 0.4s 0.5s ease forwards;
-    opacity: 0;
+    opacity: 1;
   }
-  
-  .container h1 {
-    margin-top: 20px;
-    font-size: 2rem;
-  }
-  
-  .container p {
-    font-size: 1.2rem;
-    margin-top: 10px;
-  }
-  
-  .container button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 1rem;
-    border: none;
-    background-color: #28d68c;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .container button:hover {
-    background-color: #22b678;
-  }
-  
-  @keyframes popIn {
-    0% {
-      transform: scale(0);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-  
-  @keyframes drawCheck {
-    0% {
-      height: 0;
-      opacity: 1;
-    }
-    50% {
-      height: 25px;
-      opacity: 1;
-    }
-    100% {
-      height: 50px;
-      opacity: 1;
-    }
-  }
-  
-  .darkMode {
-    background-color: #121212;
-    color: #ffffff;
-  }
-  
-  .darkMode button {
-    background-color: #555;
-  }
-  
-  .toggleMode {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-  }
-  
-  
+}
+
+.darkMode {
+  background-color: rgb(var(--background-start-rgb));
+  color: rgb(var(--foreground-rgb));
+}
+
+.darkMode button {
+  background-color: #555;
+}
+
+.darkMode button:hover {
+  background-color: #777;
+}
+
+.toggleMode {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: inherit;
+}
+
